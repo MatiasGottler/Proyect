@@ -1,0 +1,32 @@
+import yfinance as yf
+
+# Download Tesla stock data from Yahoo Finance
+tesla = yf.Ticker("TSLA")
+tesla_data = tesla.history(period="max")
+
+# Reset the index and save the dataframe
+tesla_data = tesla_data.reset_index()
+tesla_data.to_csv("tesla_stock_data.csv", index=False)
+
+# Display the first five rows of the dataframe
+print(tesla_data.head())
+# Assuming you already have the `tesla_revenue` dataframe
+
+# Assuming you already have the `tesla_revenue` dataframe
+
+print(tesla_revenue.tail())
+##Graphics
+import matplotlib.pyplot as plt
+
+# Define the make_graph function
+def make_graph(title, x, y):
+    plt.plot(x, y)
+    plt.title(title)
+    plt.xlabel("Date")
+    plt.ylabel("Price")
+    plt.show()
+
+# Plot Tesla stock data with a title
+make_graph("Tesla Stock Data", tesla_data["Date"], tesla_data["Close"])
+# Plot GameStop stock data with a title
+make_graph("GameStop Stock Data", gme_data["Date"], gme_data["Close"])
